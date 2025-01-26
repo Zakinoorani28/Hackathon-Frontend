@@ -3,6 +3,15 @@ import React from 'react';
 import { ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
+
+    // Scroll to the loan calculator section
+    const handleScrollToCalculator = () => {
+        const calculatorSection = document.getElementById('loan-calculator');
+        if (calculatorSection) {
+            calculatorSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <header className="relative bg-blue-50 text-white">
             <div className="container mx-auto px-4 py-16 text-center">
@@ -17,9 +26,12 @@ const HeroSection = () => {
                     Easy microfinance solutions to help you achieve your dreams with interest-free loans.
                 </p>
 
-                <button className="bg-gradient-to-r from-emerald-600 to-emerald-400 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:from-emerald-500 hover:to-emerald-300 transition-colors mx-auto">
+                <button
+                    onClick={handleScrollToCalculator}
+                    className="bg-gradient-to-r from-emerald-600 to-emerald-400 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:from-emerald-500 hover:to-emerald-300 transition-colors mx-auto">
                     Apply For Loan
                     <ChevronRight className="w-5 h-5" />
+
                 </button>
             </div>
         </header>

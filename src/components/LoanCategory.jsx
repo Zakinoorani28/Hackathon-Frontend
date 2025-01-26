@@ -34,6 +34,15 @@ const LoanCategories = () => {
         },
     ];
 
+
+    // Scroll to the loan calculator section
+    const handleScrollToCalculator = () => {
+        const calculatorSection = document.getElementById('loan-calculator');
+        if (calculatorSection) {
+            calculatorSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section className="py-16">
             <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent mb-12">
@@ -66,7 +75,9 @@ const LoanCategories = () => {
                                 </span>
                             </div>
                         </div>
-                        <button className="mt-6 w-full flex items-center justify-center gap-2 bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors">
+                        <button
+                            onClick={handleScrollToCalculator}
+                            className="mt-6 w-full flex items-center justify-center gap-2 bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors">
                             Apply for Loan
                             <ArrowRight className="w-4 h-4" />
                         </button>
