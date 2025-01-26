@@ -1,10 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-{/* Loan Calculator Section */ }
 
 const CalculatorSection = () => {
-
-
     // Scroll to the loan calculator section
     const handleScrollToCalculator = () => {
         const calculatorSection = document.getElementById('loan-calculator');
@@ -31,7 +28,7 @@ const CalculatorSection = () => {
                 {/* Image Section */}
                 <div className="md:w-1/2 flex justify-center">
                     <img
-                        src="/src/assets/calculator.png"
+                        src="/calculator.png"
                         alt="Loan Calculator"
                         className="rounded-2xl shadow-lg"
                     />

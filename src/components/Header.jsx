@@ -51,7 +51,11 @@ const Header = () => {
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo and Title */}
                 <div className="flex items-center space-x-4">
-                    <img src="/src/assets/logo2.png" alt="Saylani Microfinance Logo" className="w-8 h-8" />
+                    <img
+                        src="/logo2.png" // Updated path
+                        alt="Saylani Microfinance Logo"
+                        className="w-8 h-8"
+                    />
                     <span className="text-xl font-semibold text-gray-800">Saylani Microfinance</span>
                 </div>
 
