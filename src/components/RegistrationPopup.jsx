@@ -54,36 +54,29 @@ export default function RegistrationPopup({ isOpen, onClose, loanDetails, onRegi
             // Check if the user already exists (sign in with email/password)
             try {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                // User exists, sign in and fetch data
                 const user = userCredential.user;
 
                 // Fetch user details from Firestore
                 const userRef = doc(db, 'loanApplications', user.uid);
                 const userDoc = await getDoc(userRef);
                 if (userDoc.exists()) {
-                    // Load the previous application data
                     const userData = userDoc.data();
-                    // Display it or redirect based on your dashboard design
-                    onRegister(userData);  // Pass the data to your dashboard or appropriate component
+                    onRegister(userData);
                 }
-                // Redirect to dashboard
-                navigate('/dashboard'); // Redirect to dashboard after login
 
+                navigate('/dashboard'); // Redirect to dashboard after login
             } catch {
-                // User doesn't exist, create a new user
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
                 console.log(user);
+                
 
-                // Store data in Firestore
                 await addDoc(collection(db, 'loanApplications'), applicationData);
 
                 setSuccess(true);
-                // Directly redirect to the dashboard after successful signup
-                onRegister(cnic, email); // Call the onRegister prop for further processing
-                navigate('/dashboard'); // Redirect to dashboard immediately
+                onRegister(cnic, email);
+                navigate('/dashboard'); // Redirect to dashboard after signup
             }
-
         } catch (err) {
             setError('An error occurred. Please try again later.');
             console.error('Error submitting application:', err);

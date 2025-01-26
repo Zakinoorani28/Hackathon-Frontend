@@ -126,7 +126,7 @@ export default function LoanCalculator() {
     };
 
     return (
-        <div className="bg-white p-8 rounded-lg shadow-lg">
+        <div className="bg-white p-8 rounded-lg shadow-lg" id='loan-calculator'>
             <div className="flex items-center gap-2 mb-8">
                 <Calculator className="w-8 h-8 text-emerald-600" />
                 <h3 className="text-2xl font-semibold text-gray-800">Loan Calculator</h3>
