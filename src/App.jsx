@@ -1,8 +1,7 @@
-// src/App.jsx
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'; // Import necessary routing components
-import LandingPage from './pages/Landingpage';
+import LandingPage from './pages/LandingPage';
 import Dashboard from './components/Dashboard'; // Import the Dashboard
 
 function App() {
